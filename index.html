@@ -285,18 +285,39 @@
             margin-bottom: 4rem;
         }
 
-        .about-image {
-            position: relative;
-            max-width: 400px;
-            margin: 0 auto;
-        }
+        .about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 4rem;
+}
 
-        .about-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 1.5rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
+/* même style que ton ancienne image */
+.about-video {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.about-video video {
+    width: 100%;
+    height: auto;
+    border-radius: 1.5rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+.about-content h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.about-content p {
+    color: var(--color-gray-600);
+    margin-bottom: 1rem;
+}
 
         .about-content h3 {
             font-size: 1.75rem;
@@ -828,7 +849,7 @@
         <div class="hero-particles" id="particles"></div>
         <div class="hero-content">
             <h1>Bonjour, je suis Axel PAULINO MARQUEZ</h1>
-            <h2>Développeur Front-end</h2>
+            <h2>Designer UX/UI</h2>
             <p>Passionné par le design et le code, je construis des expériences web qui laissent une impression durable</p>
             <button class="btn-primary" onclick="scrollToSection('projets')">
                 Découvrir mes projets
@@ -849,15 +870,20 @@
             <div class="section-divider"></div>
             
             <div class="about-grid">
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1570170609489-43197f518df0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800" alt="Portrait professionnel">
-                </div>
+    <div class="about-video">
+        <video autoplay loop muted playsinline>
+            <source src="vid/Video_2.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo HTML5.
+        </video>
+    </div>
+
                 <div class="about-content">
                     <h3>Mon voyage dans le web</h3>
                     <p>Passionné par l’innovation digitale et l’art visuel, je construis peu à peu mon univers entre code et création.</p>
                     <p>Après avoir découvert le développement front-end, je me suis pris de passion pour la beauté des interfaces simples, bien pensées et agréables à explorer. J’aime concevoir avec HTML et CSS, expérimenter avec JavaScript, et donner forme à mes idées sur Figma.</p>
                     <p>Ce que j’aime le plus dans le web, c’est cette possibilité infinie d’apprendre, de créer et de raconter des histoires à travers l’écran. Chaque projet, même le plus petit, est pour moi une nouvelle occasion d’explorer, d’apprendre et de m’améliorer.</p>
-                    <p>En dehors du code, je passe beaucoup de temps à dessiner, souvent inspiré par l’univers poétique du Studio Ghibli, dont j’admire la douceur, la lumière et la créativité. Cet univers influence ma vision du design : créer des expériences qui respirent, qui racontent quelque chose, et qui transmettent une émotion.</p>
+                    <p>En dehors du code, je passe beaucoup de temps à dessiner et à créer des œuvres en ASCII art — une manière pour moi de mêler art et technologie, pixels et poésie. Ces moments créatifs nourrissent ma curiosité et affinent mon regard sur le design, l’équilibre et la simplicité.
+</p>
                     <p>Mon objectif ? Continuer à apprendre chaque jour, affiner mon sens du détail, et évoluer vers un style de création web qui allie esthétique, simplicité et émotion.</p>
                 </div>
             </div>
@@ -872,7 +898,7 @@
                 <div class="skill-card">
                     <div class="skill-icon" style="background: linear-gradient(135deg, #9333ea, #ec4899);">🎨</div>
                     <h4>Design</h4>
-                    <p>Figma, UI/UX, création d’interfaces inspirées de l’univers Ghibli.</p>
+                    <p>Figma, UI/UX, création d’interfaces, Flyer Affinity</p>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon" style="background: linear-gradient(135deg, #f59e0b, #f97316);">⚡</div>
@@ -914,14 +940,19 @@
                         <span class="tech-tag">Git</span>
                         <span class="tech-tag">Travail de groupe</span>
                     </div>
-                    <div class="project-buttons">
-                        <button class="btn-project btn-project-primary" style="background: linear-gradient(135deg, var(--color-green), var(--color-emerald));">
-                            Voir plus →
-                        </button>
-                        <button class="btn-project btn-project-secondary">
-                            Code </>
-                        </button>
-                    </div>
+                   <div class="project-buttons">    
+    <!-- Bouton vers le site -->
+    <a href="https://axelpm4.github.io/GreenCity/" target="_blank"
+       class="btn-project btn-project-primary">
+        Voir plus →
+    </a>
+
+    <!-- Bouton vers le code -->
+    <a href="https://github.com/AxelPM4/GreenCity" target="_blank"
+       class="btn-project btn-project-secondary">
+        Code </>
+    </a>
+</div>
                 </div>
             </div>
 
@@ -943,17 +974,19 @@
                         <span class="tech-tag">Travail de groupe</span>
                     </div>
                     <div class="project-buttons">
-                        <button class="btn-project btn-project-primary" style="background: linear-gradient(135deg, var(--color-orange), var(--color-red));">
-                            Voir plus →
-                        </button>
-                        <button class="btn-project btn-project-secondary">
-                            Code </>
-                        </button>
-                    </div>
+    <a href="https://axelpm4.github.io/GustoVoyage/" target="_blank"
+       class="btn-project btn-project-primary">
+        Voir plus →
+    </a>
+    <a href="https://github.com/axelpm4/GustoVoyage" target="_blank"
+       class="btn-project btn-project-secondary">
+        Code </>
+    </a>
+</div>
                 </div>
             </div>
 
-            <!-- Project 3: VinylRental -->
+            <!-- Project 3: VinyleMania -->
             <div class="project">
                 <div class="project-image">
                     <img src="https://images.unsplash.com/photo-1653383454515-0b42b711ed7c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800" alt="VinylRental">
@@ -970,14 +1003,19 @@
                         <span class="tech-tag">Vite</span>
                         <span class="tech-tag">JavaScript</span>
                     </div>
-                    <div class="project-buttons">
-                        <button class="btn-project btn-project-primary" style="background: linear-gradient(135deg, var(--color-purple), var(--color-indigo));">
-                            Voir plus →
-                        </button>
-                        <button class="btn-project btn-project-secondary">
-                            Code </>
-                        </button>
-                    </div>
+                    <div class="project-buttons">    
+    <!-- Bouton vers le site -->
+    <a href="https://axelpm4.github.io/VinyleMania/" target="_blank"
+       class="btn-project btn-project-primary">
+        Voir plus →
+    </a>
+
+    <!-- Bouton vers le code -->
+    <a href="https://axelpm4.github.io/VinyleMania/" target="_blank"
+       class="btn-project btn-project-secondary">
+        Code </>
+    </a>
+</div>
                 </div>
             </div>
         </div>
@@ -994,31 +1032,31 @@
 
             <div class="gallery-grid">
                 <div class="gallery-item" onclick="openLightbox(0)">
-                    <img src="https://images.unsplash.com/photo-1680507500073-320536d4faf7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600" alt="Forêt enchantée">
+                    <img src="img/Playboiascii.jpg" alt="Forêt enchantée">
                     <div class="gallery-overlay">
-                        <h4>Forêt enchantée</h4>
-                        <p>Paysage inspiré des forêts mystérieuses</p>
+                        <h4>Playboi Carti (ASCII)</h4>
+                        <p>Affiche réalisée en art ASCII, mettant en avant le style minimaliste et graphique de l’artiste. Créée avec Affinity Designer.</p>
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(1)">
-                    <img src="https://images.unsplash.com/photo-1735222001088-e27f45a75c77?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600" alt="Chemin forestier">
+                    <img src="img/rauwalejandro.png" alt="Chemin forestier">
                     <div class="gallery-overlay">
-                        <h4>Chemin forestier</h4>
-                        <p>Un sentier paisible entre les arbres</p>
+                        <h4>Rauw Alejandro (ASCII)</h4>
+                        <p>Portrait en ASCII inspiré de l’esthétique du chanteur, travail sur contraste et forme simplifiée. Réalisée avec Affinity Designer.</p>
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(2)">
-                    <img src="https://images.unsplash.com/photo-1692259499174-896cf8b037f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600" alt="Crépuscule en montagne">
+                    <img src="img/drake.png" alt="Crépuscule en montagne">
                     <div class="gallery-overlay">
-                        <h4>Crépuscule en montagne</h4>
-                        <p>Les derniers rayons du soleil</p>
+                        <h4>Drake (effets graphiques)</h4>
+                        <p>Affiche avec ajout de flou, texte en fond et halo lumineux autour du sujet, pour créer une ambiance immersive. Réalisée avec Affinity Designer.</p>
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(3)">
-                    <img src="https://images.unsplash.com/photo-1737041676765-d23b49d4a69a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600" alt="Village fantastique">
+                    <img src="img/Travis.png" alt="Village fantastique">
                     <div class="gallery-overlay">
-                        <h4>Village fantastique</h4>
-                        <p>Architecture des mondes imaginaires</p>
+                        <h4>Travis Scott (Effets Glitch & Flou)</h4>
+                        <p>Affiche dynamique avec effet glitch et flou gaussien, créant une atmosphère immersive et énergique. Réalisée avec Affinity Designer et FX dynamiques.</p>
                     </div>
                 </div>
             </div>
@@ -1170,24 +1208,24 @@
         // Gallery lightbox
         const galleryData = [
             {
-                src: 'https://images.unsplash.com/photo-1680507500073-320536d4faf7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1200',
-                title: 'Forêt enchantée',
-                description: 'Paysage inspiré des forêts mystérieuses de Totoro'
+                src: 'img/Playboiascii.jpg',
+                title: 'Playboi Carti (ASCII)',
+                description: 'Affiche réalisée en art ASCII, mettant en avant le style minimaliste et graphique de l’artiste. Créée avec Affinity Designer.'
             },
             {
-                src: 'https://images.unsplash.com/photo-1735222001088-e27f45a75c77?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1200',
-                title: 'Chemin forestier',
-                description: 'Un sentier paisible entre les arbres'
+                src: 'img/rauwalejandro.png',
+                title: 'Rauw Alejandro (ASCII)',
+                description: 'Portrait en ASCII inspiré de l’esthétique du chanteur, travail sur contraste et forme simplifiée. Réalisée avec Affinity Designer.'
             },
             {
-                src: 'https://images.unsplash.com/photo-1692259499174-896cf8b037f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1200',
-                title: 'Crépuscule en montagne',
-                description: 'Les derniers rayons du soleil sur les sommets'
+                src: 'img/drake.png',
+                title: 'Drake (effets graphiques)',
+                description: 'Affiche avec ajout de flou, texte en fond et halo lumineux autour du sujet, pour créer une ambiance immersive. Réalisée avec Affinity Designer.'
             },
             {
-                src: 'https://images.unsplash.com/photo-1737041676765-d23b49d4a69a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1200',
-                title: 'Village fantastique',
-                description: 'Une architecture inspirée des mondes imaginaires'
+                src: 'img/Travis.png',
+                title: 'Travis Scott (Effets Glitch & Flou)',
+                description: 'Affiche dynamique avec effet glitch et flou gaussien, créant une atmosphère immersive et énergique. Réalisée avec Affinity Designer et FX dynamiques.'
             }
         ];
 
